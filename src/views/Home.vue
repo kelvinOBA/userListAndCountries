@@ -4,7 +4,9 @@
     <div class="parent-cover" >
 
 <div>
+  <a href="https://tix.africa/" target="_blank">
   <p><span class="tix-offblue">tix.</span><span class="tix-main">africa</span></p>
+  </a>
 </div>
       <div class="user-detail animate__animated animate__fadeInUp" v-if="showUserObject">
 
@@ -83,7 +85,7 @@ showUserObject : false
 
       this.currentPage = index
       this.setPaginate(index)
-      console.log(this.currentPage)
+
     },
        setPaginate(pageNumber) {
        if (pageNumber == 1) {
@@ -93,7 +95,7 @@ showUserObject : false
        else {
        this.startSlice = this.paginate * (pageNumber - 1)
        this.endSlice = pageNumber *this.paginate
-console.log(this.startSlice)
+
        }
      },
 
@@ -101,7 +103,7 @@ console.log(this.startSlice)
        this.userId = user.id
  axios.get(`https://api.nationalize.io/?name=${user.name}`)
         .then(response => {
-          console.log(response, "response");
+        
 
         this.userObject = response.data
         this.showUserObject = true
@@ -109,7 +111,6 @@ console.log(this.startSlice)
         })
         .catch(error => {
           if (error.response) {
-            console.log(error.response, "error");
            
           }
         });
@@ -135,7 +136,7 @@ margin: 0 auto;
 
 .user-detail{
   border-radius: 10px;
-        border: 1px solid rgba(0,0,0,0.078);
+        border: 2px solid rgba(0,0,0,0.078);
           background: #fff;
           min-height: 200px;
           padding: 20px;
@@ -220,7 +221,10 @@ color:   #038595;
 
 .tix-main{
 
-
 color:   #fc6435;
+}
+a{
+text-decoration: none;
+
 }
 </style>
