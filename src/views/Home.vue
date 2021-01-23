@@ -31,7 +31,7 @@
         </div>
         <div>
           <h4>{{data.name}}</h4>
-          <p class="user-email">Jamman@sampete.co</p>
+          <p class="user-email">{{data.email}}</p>
         </div>
         <div>
        <button class="guess-btn" @click="checkUser(data)">Guess <i class="fa fa-spinner fa-spin" v-if="userId == data.id"></i> </button>
